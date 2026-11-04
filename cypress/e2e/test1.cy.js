@@ -7,7 +7,7 @@ it('Debe mostrar la tarea creada', () => {
   cy.get('#password').type('123');
   cy.contains('Ingresar').click();
 
-  // Esperar a que aparezca el formulario
+  // Esperar a que aparezca el formulario de tareas
   cy.get('#tasks').should('be.visible');
 
   // Crear la tarea
@@ -17,7 +17,7 @@ it('Debe mostrar la tarea creada', () => {
 
   cy.contains('Crear tarea').click();
 
-  // Verificación incorrecta para provocar el fallo
+  // Verificar que la tarea aparezca en la lista
   cy.get('#taskList')
-    .should('contain.text', 'Comprar leche');
+    .should('contain.text', 'Comprar pan');
 });
